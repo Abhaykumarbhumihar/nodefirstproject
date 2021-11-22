@@ -57,7 +57,6 @@ app.get("/dashboard", urlencoded, function (req, res) {
 });
 
 
-
 app.get("/getmongodata", function (req, res) {
     getData();
     setTimeout(function () {
@@ -74,8 +73,6 @@ console.warn("DDDDDDDD");
   inserData(req.body.name,req.body.email,req.body.address)
     res.end(req.body.name+" "+req.body.email+" "+req.body.address);   
 })
-
-
 
 app.delete('/user/email:',function(res,req){
     console.warn("DIIIIIIIIIIIIII");
