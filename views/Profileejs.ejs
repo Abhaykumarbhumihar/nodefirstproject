@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>
+       Learning Nodejs
+    </title>
+</head>
+
+<body>
+    <p>
+        <! --- name dynamictemplemet se aa raha hai ---> 
+        Learning Node JS to <%= name%> 
+    </p>
+<p> email= <%= data.email%></p>
+<p> phone no= <%= data.phoneno%></p>
+<ul>
+    <!--jb listing bnate hai tb "=" nahi use krna hota hai-->
+    <%data.skills.forEach(function(data){%>
+<li>
+    <%= data%>
+</li>
+
+  <%  })%>
+</ul>
+
+</body>
+</html>
