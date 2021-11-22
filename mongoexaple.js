@@ -27,9 +27,12 @@ function getData() {
         mongoData = data.map(function (a) { return a.email; });
 
         console.log(mongoData);
+        console.log("Testing");
 
     });
 }
+
+
 
 
 function inserData(name, email, address) {
