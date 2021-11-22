@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const mongos = require('mongoose');
-const bodyparser = require('body-parser'); 
+const bodyparser = require('body-parser');
 const User = require('./usermodel')
-var jsonparser=bodyparser.json();
+var jsonparser = bodyparser.json();
 var urlencoded = bodyparser.urlencoded();
 app.set('view engine', 'ejs')
 
@@ -51,8 +51,8 @@ function inserData(name, email, address) {
 
 
 app.get("/dashboard", urlencoded, function (req, res) {
-    
-    inserData(req.query.name,req.query.email,req.query.address)
+
+    inserData(req.query.name, req.query.email, req.query.address)
     res.render('dashboardpage')
 });
 
@@ -62,27 +62,27 @@ app.get("/getmongodata", function (req, res) {
     setTimeout(function () {
         console.log('boo')
         res.render('Showdata', { data: mongoData })
-      }, 100)
+    }, 100)
 });
 
 
 
 // post api, it will give name in response in postman
-app.post('/users',jsonparser,function(req,res){
-console.warn("DDDDDDDD");
-  inserData(req.body.name,req.body.email,req.body.address)
-    res.end(req.body.name+" "+req.body.email+" "+req.body.address);   
+app.post('/users', jsonparser, function (req, res) {
+    console.warn("DDDDDDDD");
+    inserData(req.body.name, req.body.email, req.body.address)
+    res.end(req.body.name + " " + req.body.email + " " + req.body.address);
 })
 
-app.delete('/user/email:',function(res,req){
+app.delete('/user/email:', function (res, req) {
     console.warn("DIIIIIIIIIIIIII");
-User.deleteMany({email:req.params.email}).then((result)=>{
-    console.log("delete data");
-res.status(200).json(result)
-}).catch((err)=>{
-    console.warn("DDLFKL:DKFL:DKSL:FKDLS:KFL:DSk")
+    User.deleteMany({ email: req.params.email }).then((result) => {
+        console.log("delete data");
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.warn("DDLFKL:DKFL:DKSL:FKDLS:KFL:DSk")
 
-})
+    })
 })
 
 app.listen(3491)
