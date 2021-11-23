@@ -6,7 +6,7 @@ const User = require('./usermodel')
 var jsonparser = bodyparser.json();
 var urlencoded = bodyparser.urlencoded();
 app.set('view engine', 'ejs')
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3002;
 
 var mongoData = [];
 mongos.connect('mongodb+srv://abhay:f3ZjpM7jPyXQc6ZT@cluster0.zi5ni.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
