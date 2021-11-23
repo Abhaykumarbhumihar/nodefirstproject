@@ -53,17 +53,14 @@ function inserData(name, email, address) {
 
 app.get("/dashboard", urlencoded, function (req, res) {
 
-    inserData(req.query.name, req.query.email, req.query.address)
+   // inserData(req.query.name, req.query.email, req.query.address)
     res.render('dashboardpage')
 });
 
 
 app.get("/getmongodata", function (req, res) {
-    getData();
-    setTimeout(function () {
-        console.log('boo')
-        res.render('Showdata', { data: mongoData })
-    }, 100)
+  //  getData();
+   
 });
 
 
