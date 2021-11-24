@@ -54,7 +54,7 @@ function inserData(name, email, address) {
 app.get("/dashboard", urlencoded, function (req, res) {
 
    // inserData(req.query.name, req.query.email, req.query.address)
-    res.render('dashboardpage')
+    res.render('navigationmenu')
 });
 
 
