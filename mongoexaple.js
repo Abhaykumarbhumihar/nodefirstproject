@@ -49,7 +49,11 @@ function inserData(name, email, address) {
     });
 }
 
+app.get("/", urlencoded, function (req, res) {
 
+    // inserData(req.query.name, req.query.email, req.query.address)
+     res.render('newnav')
+ });
 
 app.get("/dashboard", urlencoded, function (req, res) {
 
