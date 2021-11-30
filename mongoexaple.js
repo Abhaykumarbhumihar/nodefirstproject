@@ -7,6 +7,8 @@ var jsonparser = bodyparser.json();
 var urlencoded = bodyparser.urlencoded();
 app.set('view engine', 'ejs')
 var port = process.env.PORT || 3002;
+var path = require('path');
+
 
 var mongoData = [];
 mongos.connect('mongodb+srv://abhay:f3ZjpM7jPyXQc6ZT@cluster0.zi5ni.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
@@ -48,6 +50,8 @@ function inserData(name, email, address) {
         console.warn(result);
     });
 }
+
+app.use('/images', express.static(path.join(__dirname, 'views/images')))
 
 app.get("/", urlencoded, function (req, res) {
 
